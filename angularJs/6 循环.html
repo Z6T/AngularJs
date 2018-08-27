@@ -1,0 +1,59 @@
+<!DOCTYPE html ng-app>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+    <style>
+
+    </style>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-init="arr=[2,5,6,7,2,3,7]">
+<ul>
+    <li ng-repeat="item in arr track by $index">
+        {{item}}的序号是{{$index}}
+    </li>
+</ul>
+
+<ul ng-init="mm=[{age:12,name:'lisi'},{age:662,name:'lisi'}]">
+    <li ng-repeat="item in mm">
+        {{item.age}}的序号是{{$index}}
+    </li>
+</ul>
+<ul ng-init="n = {a:12,b:'pp',c:'caocao'}">
+    <li ng-repeat="(k,v) in n">
+        {{k}}---in---{{v}}
+    </li>
+</ul>
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+<script>
+
+</script>
+</html>

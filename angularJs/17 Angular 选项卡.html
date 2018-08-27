@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box input.active{
+            background-color: #fffe23;
+            border: 1px solid #CCCCCC;
+        }
+        .box div{
+            width: 400px;
+            height: 200px;
+            display: none;
+        }
+        div.cur{
+            display: block;
+            background-color: #55ff39;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+    <script>
+        let mod = angular.module('main',[]);
+        mod.controller('main',function ($scope) {
+        	//定义下当前
+            $scope.now = 0;
+            $scope.items={
+            	'按钮一':'aaa',
+            	'按钮二':'bbb',
+            	'按钮三':'ccc'
+            };
+            $scope.setNow = function (index) {
+                $scope.now = index;
+            }
+        })
+    </script>
+</head>
+<body ng-controller="main">
+    <div class="box">
+        <!--循环,事件赋值不能同时出现 表达式-->
+        <input ng-click="setNow($index)" class="{{$index==now ?'active':''}}" type="button" ng-repeat="(key,value) in items" value="{{key}}">
+        <div class="{{$index==now ?'cur':''}}"  ng-repeat="(key,value) in items">{{value}}</div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

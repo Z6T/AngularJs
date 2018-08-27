@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main1">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        //第一个参数是模块的名字
+        /*
+        依赖于某个模块相当于把其他的模块的所有东西全部拿到了这个模块
+         */
+        let mod = angular.module('main',[])
+        mod.controller('c1',function ($scope) {
+	        $scope.a = 21
+        })
+        let modmain = angular.module('main1',['main'])
+    </script>
+</head>
+<body ng-controller="c1">
+{{a}}
+</body>
+<script>
+
+</script>
+</html>

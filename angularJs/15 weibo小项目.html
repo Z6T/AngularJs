@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html ng-app="weibo">
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe
+    .com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+<script src="angular.min.js" charset="utf-8"></script>
+<script>
+let mod=angular.module('weibo', []);
+mod.controller('main',function ($http,$scope) {
+	$scope.msg_list = [];
+    $scope.addMsg = function () {
+        $http.get('weibo.php?act=xxx&content=${$scope.text}').then(res=>{
+        	if(json.error){
+        		alert('发送留言失败')
+            }else{
+        		alert('成功');//TODO
+            }
+        },()=>{
+        	alert('失败')
+        })
+    };
+    //2.显示留言
+     $http.get(`weibo.php?xont=xxx`).then(res=>{
+	     $scope.msg_list  = res.data;
+     },()=>{
+
+     })
+
+})
+
+</script>
+</head>
+
+<body ng-controller="main">
+<div class="znsArea">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" ng-model="text"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" ng-click="addMsg"/>
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+				<div class="page">
+					<a href="javascript:;" ng-repeat="i in count"></a>
+				</div>
+        <div class="messList" id="msg_box">
+          <div class="reply" ng-repeat="json in msg_list ">
+            <p class="replyContent">{{json.content}}</p>
+            <p class="operation">
+              <span class="replyTime">{{json.time|data:"y年MM月dd日"}}</span>
+              <span class="handle">
+                <a href="javascript:;" class="top" ></a>
+                <a href="javascript:;" class="down_icon" ></a>
+                <a href="javascript:;" class="cut" >删除</a>
+              </span>
+            </p>
+          </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

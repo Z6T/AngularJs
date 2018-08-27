@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="angular.min.js"></script>
+    <script>
+        let mode = angular.module('app',[]);
+        mode.controller('watch',function ($scope,$http) {
+        	$scope.arr = [];
+	        $scope.$watch('word',function (data) {
+	        	//此时的data表示新的值
+		      $http.jsonp('')
+	        })
+        })
+    </script>
+</head>
+<body>
+<input type="text" ng-model="word"  ng-controller="watch">
+<ul>
+    <li ng-repeat="item in arr ">{{item}} </li>
+</ul>
+</body>
+<script>
+
+</script>
+</html>

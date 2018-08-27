@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weibo">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="angular.min.js"></script>
+    <script>
+        let mode = angular.module('weibo',[]);
+        mode.controller('main',function ($scope,$http) {
+            $scope.addMsg = function () {
+                $http.get(`weibo.php?act=add&content=${$scope.text}`).then(res=>{
+                	let json = res.data;
+
+
+                })
+            }
+        })
+    </script>
+</head>
+<body ng-controller="main">
+<input type="text" ng-model="text">
+<button ng-click="addMsg"></button>
+</body>
+<script>
+
+</script>
+</html>

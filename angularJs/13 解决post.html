@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        //第一个参数是模块的名字
+        /*
+        依赖于某个模块相当于把其他的模块的所有东西全部拿到了这个模块
+         */
+        let mod = angular.module('main',[]);
+        mod.config(function ($httpProvider) {
+	        $httpProvider.defaults.transformRequest = function (obj) {
+                let arr = [];
+                for(let name in obj ){
+                	arr.push(`encodeURIComponent(${name})=encodeURIComponent(${obj[name]})`);
+                }
+                return ar.join('&');
+	        }
+            $httpProvider.defaults.hearders.post['Content-Type'] = 'application/x-www-form-urlencoded';
+        })
+        mod.controller('mainCon',function ($http) {
+            $http({
+                method:'post',
+                url:'http://localhost/13/13.php',
+                data:{a:12,b:55}
+            }).then(res=>{
+            	alert(res.data)
+            },()=>{
+            	alert('失败')
+            })
+        })
+    </script>
+</head>
+<body ng-controller="mainCon">
+{{a}}
+</body>
+<script>
+
+</script>
+</html>
