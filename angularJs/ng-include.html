@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-init="a='1.html'">
+<!--又忘记写ng-app了-->
+    <button ng-click="a = '1.html'">页面一</button>
+    <button ng-click="a = '2.html'">页面二</button>
+<div ng-include="a">
+
+</div>
+</body>
+</html>

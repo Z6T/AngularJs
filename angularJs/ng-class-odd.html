@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <style>
+        .box{
+            color: red;
+        }
+    </style>
+</head>
+<body ng-init="arr = [12,434,4,3,78]">
+<ul>
+    <!--odd表示奇数行 从1 开始的-->
+    <li ng-repeat="item in arr" ng-class-odd="['box']">{{item}}</li>
+</ul>
+</body>
+</html>

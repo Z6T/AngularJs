@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <style>
+        .box{
+            color: red;
+        }
+    </style>
+</head>
+<body ng-init="arr = [12,434,4,3,78]">
+<!--爱好：<input type="text" ng-model="fav">-->
+<!--必须使用ng-list  ,会将用户输入的自动转化为数组，但是必须使用逗号隔开-->
+爱好：<input type="text" ng-model="fav" ng-list>
+<dl>
+    <dt>你输入的是</dt>
+    <dd ng-repeat="item in fav">{{item}}</dd>
+</dl>
+
+<!--{{fav}}-->
+</body>
+</html>
