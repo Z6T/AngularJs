@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" ng-app>
 <head>
@@ -61,4 +62,69 @@
 <script>
 
 </script>
+=======
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border: 1px solid darkred;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+        	let $scope = {};
+        	let eles = document.getElementsByTagName('*');
+        	console.log(eles)
+            //数据--->input
+        	function apply() {
+        		// Array.from 的意思就是将类数组转化为数组
+                Array.from(eles).forEach(ele=>{
+	                let model =ele.getAttribute('ng-model');
+	                if(model){
+                		if($scope[model]){
+                			ele.value = $scope[model]
+                        }else{
+			                ele.value = '';
+                        }
+                    }
+                })
+	        }
+	        //input -->数据
+	        Array.from(eles).forEach(ele=>{
+		        let model =ele.getAttribute('ng-model');
+		        if(model){
+			       ele.oninput = function () {
+                       $scope[model] = this.value;
+                       apply()
+			       }
+		        }
+	        })
+        }
+    </script>
+</head>
+<body>
+
+<input type="text" ng-model="a">
+<input type="text" ng-model="a">
+<br>
+<br>
+<br>
+<input type="text" ng-model="b">
+<select name="" id="" ng-model="b">
+    <option value="1">小明</option>
+    <option value="2">大米</option>
+    <option value="3">小米</option>
+</select>
+
+</body>
+<script>
+
+</script>
+>>>>>>> 38ea92c4c79f067b60fb71cd3a0ebf78170fe298
 </html>
