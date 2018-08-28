@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script>
+        let mod = angular.module('test',[]);
+        //此处如果参数写的不是$scope就JJ了
+        mod.controller('main',function ($scope) {
+            $scope.a = 12;
+        })
+    </script>
+</head>
+<body ng-controller="main">
+{{a}}
+</body>
+</html>
