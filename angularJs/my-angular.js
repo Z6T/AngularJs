@@ -26,6 +26,10 @@ window.onload = function () {
 					}
 				})
 			}
+			//只要数据有变化就调用binds
+			binds.forEach(json=>{
+				json.ele.innerHTML = json.name;
+			})
 		}
 
 		//html ===>数据
@@ -39,9 +43,6 @@ window.onload = function () {
 		//ng-bind
 
 		let binds = findDerective('ng-bind');
-		binds.forEach(json=>{
-			json.ele.innerHTML = json.name;
-		})
 
 	})
 
