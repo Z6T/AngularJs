@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+            width: 200px;
+        }
+        .b{
+            height: 20px;
+        }
+        .c{
+            background-color: #CC33CC;
+        }
+        .d{
+            border:20px solid #CC0000;
+        }
+    </style>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-init="a='a b c';b=['a','b','c','d']">
+<div class="{{a}}"></div>
+<br>
+<br>
+<br>
+<br>
+<div ng-class="b"></div>
+</body>
+<script>
+
+</script>
+</html>

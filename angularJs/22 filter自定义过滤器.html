@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        let mod = angular.module('test',[]);
+        mod.filter('hidetel',function () {
+        	//第一个参数指的是需要被执行过滤操作的数据,第二个是需要传进来的参数
+            return function (input,length) {
+            	input = input +'';
+                //真正的代码代码
+                return input.substring(0,3)+''.padStart(length,'*')+input.substring(3+length);
+            }
+        })
+    </script>
+</head>
+<!--注意此处的电话号码如果是纯数字都不行,严格必须是字符串-->
+<body ng-init="arr = [{title:'张三',price:13922222222}]">
+<ul>
+    <li ng-repeat="json in arr">
+        <h4>{{json.title}}</h4>
+        <span>{{json.price | hidetel:5}}</span><br>
+    </li>
+</ul>
+
+
+</body>
+<script>
+
+</script>
+</html>

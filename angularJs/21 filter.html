@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-init="arr = [{title:'美女',price:19,time:1535427123983},{title:'战神',time:1535427123100,price:29},{title:'野兽',price:39,time:1100427123983}]">
+<ul>
+    <li ng-repeat="json in arr">
+        <h4>{{json.title}}</h4>
+        <span>{{json.price|currency:'o-'}}</span><br>
+        <span>{{json.time|date:'y年MM月dd日 hh:mm:ss'}}</span>
+    </li>
+</ul>
+
+
+</body>
+<script>
+
+</script>
+</html>

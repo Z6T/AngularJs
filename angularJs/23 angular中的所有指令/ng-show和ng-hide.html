@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #CCCCCC;
+        }
+    </style>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-init="a = false">
+<button ng-click="a = !a">控制</button>
+    <div class="box" ng-show="a"> </div>
+</body>
+<script>
+
+</script>
+</html>

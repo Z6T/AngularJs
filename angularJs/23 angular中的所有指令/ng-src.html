@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #CCCCCC;
+        }
+    </style>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-init="a = 'https://www.baidu.com/img/bd_logo1.png?where=super'">
+<button ng-click="a = !a">控制</button>
+
+<!--ng-src 就不会报错,但是src就会报错,SRC就会直接去找{{a}},但是找不到,所以报错-->
+
+
+<img src="{{a}}" alt="">
+
+</body>
+<script>
+
+</script>
+</html>

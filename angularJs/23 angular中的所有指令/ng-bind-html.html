@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script>
+        let mod = angular.module('main',[]);
+        //第二个参数表示安全,需要使用$sce.trustAsHtml()
+        mod.controller('main',function ($scope,$sce) {
+            $scope.a = $sce.trustAsHtml('<strong style="color: red;">我是zhangtao,是一介草民</strong>');
+        })
+    </script>
+</head>
+<body>
+<!--ng-switch 需要搭配ng-switch-when-->
+<div ng-controller="main">
+    <span ng-bind-html="a"></span>
+</div>
+</body>
+</html>
